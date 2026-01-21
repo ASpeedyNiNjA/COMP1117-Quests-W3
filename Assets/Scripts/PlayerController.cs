@@ -3,12 +3,9 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using Unity.VisualScripting;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Character
 {
-    [Header("Initial Player Stats")]
-    // Initial Player Stats
-    [SerializeField] public float initialSpeed = 5;
-    [SerializeField] private int initialHealth = 100;
+
 
     public Image HPFull;
 
@@ -21,15 +18,17 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
+
         // Initialize
         rBody = GetComponent<Rigidbody2D>();
 
-        stats = new PlayerStats(initialSpeed, initialHealth);
+       // stats = new PlayerStats(initialSpeed, initialHealth);
     }
 
-    void OnMove(InputValue value)
+   public void OnMove(InputAction.CallbackContext context)
     {
-        moveInput = value.Get<Vector2>();
+        // moveInput = value.Get<Vector2>(); //Old
+        moveInput = context.ReadValue<Vector2>(); //New
     }
 
     void FixedUpdate()
