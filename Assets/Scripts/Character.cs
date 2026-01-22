@@ -20,22 +20,31 @@ public class Character : MonoBehaviour
 
     public bool IsDead
     {
+        // Read-only
         get { return isDead; }
     }
 
-    public int CurrentHealth
+    protected int CurrentHealth
     {
         get { return currentHealth; }
         set { currentHealth = Mathf.Clamp(value, 0, maxHealth); }
     }
 
-    private void Awake()
+    protected virtual void Awake()
     {
+        Debug.Log("Awake in Character.cs");
         currentHealth = maxHealth;
     }
 
+
     public void TakeDamage(int amount)
     {
+        // Level of Protection
+        if(isDead)
+        {
+            return;
+        }
+
         CurrentHealth -= amount;
         Debug.Log($"{gameObject.name} Hp is now: {CurrentHealth}");
 
@@ -45,7 +54,8 @@ public class Character : MonoBehaviour
         }
     }
 
-    public void Die()
+    //Not a good idea to leave this accessible
+    protected void Die()
     {
         isDead = true;
         Debug.Log($"{gameObject.name} has died.");
