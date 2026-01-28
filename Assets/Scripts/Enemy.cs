@@ -10,6 +10,7 @@ public class Enemy : Character
     private int currentHealth;
     private SpriteRenderer spriteRenderer;
     private Color OGcolor;
+    private float alpha = 1.0f;
 
     protected override void Awake()
     {
@@ -26,15 +27,38 @@ public class Enemy : Character
         StartCoroutine(FlashBlack());
         if (currentHealth <= 0)
         {
-            Die();
+            StartCoroutine(SoulFade());
         }
     }
     private IEnumerator FlashBlack()
     {
-
         spriteRenderer.color = Color.black;
-        yield return new WaitForSeconds(0.2f);
-        spriteRenderer.color = OGcolor;
+        yield return new WaitForSeconds(0.6f);
+        spriteRenderer.color = OGcolor;       
+    }
+
+
+    //spriteRenderer.color = new Color(1, 1, 1, 0.5f);
+
+    private IEnumerator SoulFade()
+    {
+        spriteRenderer.color = new Color(1, 1, 1, alpha);
+        alpha -= 0.2f;
+        yield return new WaitForSeconds(0.1f);
+        spriteRenderer.color = new Color(1, 1, 1, alpha);
+        alpha -= 0.2f;
+        yield return new WaitForSeconds(0.1f);
+        spriteRenderer.color = new Color(1, 1, 1, alpha);
+        alpha -= 0.2f;
+        yield return new WaitForSeconds(0.1f);
+        spriteRenderer.color = new Color(1, 1, 1, alpha);
+        alpha -= 0.2f;
+        yield return new WaitForSeconds(0.1f);
+        spriteRenderer.color = new Color(1, 1, 1, alpha);
+        alpha -= 0.2f;
+        yield return new WaitForSeconds(0.1f);
+        spriteRenderer.color = new Color(1, 1, 1, alpha);
+        Die();
     }
 
     void Die()

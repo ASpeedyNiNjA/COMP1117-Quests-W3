@@ -7467,9 +7467,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Eagle
       objectReference: {fileID: 0}
+    - target: {fileID: 3127585128522859341, guid: 0810b7bf35e4ecf4595e9d90dd0be32d, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3799021412394343042, guid: 0810b7bf35e4ecf4595e9d90dd0be32d, type: 3}
       propertyPath: maxHealth
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4921847727921385195, guid: 0810b7bf35e4ecf4595e9d90dd0be32d, type: 3}
       propertyPath: m_IsTrigger
