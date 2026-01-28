@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &395988838 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3462516696737198626, guid: 7f42f5c054cc0fa4dadfa2c6b8601e51, type: 3}
+  m_PrefabInstance: {fileID: 1863270855174590643}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &411141549
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,7 +523,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5497493851762786267, guid: 7f42f5c054cc0fa4dadfa2c6b8601e51, type: 3}
   m_PrefabInstance: {fileID: 1863270855174590643}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 395988838}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2d05c898f53c78499217471acc3509f, type: 3}
@@ -7257,12 +7262,26 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6796997601795716166, guid: 7f42f5c054cc0fa4dadfa2c6b8601e51, type: 3}
   m_PrefabInstance: {fileID: 1863270855174590643}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 395988838}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c09cf4fcd2f8c36459cf25937aa90861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInputHandler
+--- !u!114 &2147168643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395988838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 167922d59cdaa6043a095c26b40885a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerShoot
+  bulletPrefab: {fileID: 1193741605652586031, guid: 60fedb555504b0d4196824133d8ee5b7, type: 3}
+  bulletSpeed: 50
 --- !u!1001 &1863270855174590643
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7366,7 +7385,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3462516696737198626, guid: 7f42f5c054cc0fa4dadfa2c6b8601e51, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2147168643}
   m_SourcePrefab: {fileID: 100100000, guid: 7f42f5c054cc0fa4dadfa2c6b8601e51, type: 3}
 --- !u!1001 &3040798899563221566
 PrefabInstance:
@@ -7444,6 +7466,14 @@ PrefabInstance:
     - target: {fileID: 2426300929233190947, guid: 0810b7bf35e4ecf4595e9d90dd0be32d, type: 3}
       propertyPath: m_Name
       value: Eagle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3799021412394343042, guid: 0810b7bf35e4ecf4595e9d90dd0be32d, type: 3}
+      propertyPath: maxHealth
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4921847727921385195, guid: 0810b7bf35e4ecf4595e9d90dd0be32d, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5500327015538761267, guid: 0810b7bf35e4ecf4595e9d90dd0be32d, type: 3}
       propertyPath: m_LocalPosition.x
