@@ -26,7 +26,7 @@ public class Enemy : Character
         currentHealth -= damage;
         StartCoroutine(FlashBlack());
         if (currentHealth <= 0)
-        {
+        {   //Sidequest A
             StartCoroutine(SoulFade());
         }
     }
@@ -40,24 +40,15 @@ public class Enemy : Character
 
     //spriteRenderer.color = new Color(1, 1, 1, 0.5f);
 
+    //Sidequest A
     private IEnumerator SoulFade()
     {
-        spriteRenderer.color = new Color(1, 1, 1, alpha);
-        alpha -= 0.2f;
-        yield return new WaitForSeconds(0.1f);
-        spriteRenderer.color = new Color(1, 1, 1, alpha);
-        alpha -= 0.2f;
-        yield return new WaitForSeconds(0.1f);
-        spriteRenderer.color = new Color(1, 1, 1, alpha);
-        alpha -= 0.2f;
-        yield return new WaitForSeconds(0.1f);
-        spriteRenderer.color = new Color(1, 1, 1, alpha);
-        alpha -= 0.2f;
-        yield return new WaitForSeconds(0.1f);
-        spriteRenderer.color = new Color(1, 1, 1, alpha);
-        alpha -= 0.2f;
-        yield return new WaitForSeconds(0.1f);
-        spriteRenderer.color = new Color(1, 1, 1, alpha);
+        for (int i = 0; i < 4; i++)
+        {
+            spriteRenderer.color = new Color(1, 1, 1, alpha);
+            alpha -= 0.2f;
+            yield return new WaitForSeconds(0.1f);
+        }
         Die();
     }
 
